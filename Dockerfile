@@ -12,6 +12,7 @@ RUN set -x \
     && mv /tmp/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs \
     && rm -rf /tmp/phantomjs-2.1.1-linux-x86_64
 
-RUN apt-get install -y git
+RUN apt-get update \
+    && apt-get install -y ruby-dev zlib1g-dev liblzma-dev build-essential git expect-dev
 
 RUN phantomjs --version
